@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>ReportCity - Activaciones</title>
+                 <h:outputStylesheet library="vendor" name="bootstrap/css/bootstrap.min.css"/>
+                 <h:outputStylesheet library="vendor" name="fontawesome-free/css/all.min.css"/>
+                 <h:outputStylesheet library="vendor" name="simple-line-icons/css/simple-line-icons.css"/>
+                 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"></link>
+                <h:outputStylesheet library="device-mockups" name="device-mockups.min.css"/>
+                <h:outputStylesheet library="css" name="new-age.min.css"/>
+                <h:outputScript library="vendor" name="jquery/jquery.min.js"/>
+                <h:outputScript library="vendor" name="bootstrap/js/bootstrap.bundle.min.js"/>
+                <h:outputScript library="vendor" name="jquery-easing/jquery.easing.min.js"/>
+                <h:outputScript library="js" name="new-age.min.js"/>
+            </f:facet>
+            
+            <f:metadata>
+                <!--<f:viewParam name="token" value="#{param['token']}"/>-->
+                <f:viewParam name="token" value="#{controlActivacion.token}"/>
+                <f:event type="preRenderView" listener="#{controlActivacion.before}"/>
+               
+            </f:metadata>
+        </h:head>
+
+        <h:body id="page-top">
+
+            <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">ReportCity</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Descarga</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#">Caracter&iacute;sticas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+                <h1 class="mb-5"><h:outputText value="#{controlActivacion.mensaje}" /></h1>
+              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Descarga la app ahora!!</a>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <!--<img src="img/demo-screen-1.jpg" class="img-fluid" alt="">-->
+                    <h:graphicImage class="img-fluid" library="img" name="#{controlActivacion.imagen}" />
+                  </div>
+                  <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--
+    <section class="download bg-primary text-center" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Discover what all the buzz is about!</h2>
+            <p>Our app is available on any mobile device! Download now to get started!</p>
+            <div class="badges">
+              <a class="badge-link" href="#"><h:graphicImage  library="img" name="google-play-badge.svg" /></a>
+              <a class="badge-link" href="#"><h:graphicImage  library="img" name="app-store-badge.svg" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>Unlimited Features, Unlimited Fun</h2>
+          <p class="text-muted">Check out what you can do with this app theme!</p>
+          <hr></hr>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                
+                   
+                    <h:graphicImage class="img-fluid"  library="img" name="demo-screen-1.jpg" />
+                    app-store-badge.svg
+                  </div>
+                  <div class="button">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 my-auto">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-screen-smartphone text-primary"></i>
+                    <h3>Device Mockups</h3>
+                    <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-camera text-primary"></i>
+                    <h3>Flexible Use</h3>
+                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-present text-primary"></i>
+                    <h3>Free to Use</h3>
+                    <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-lock-open text-primary"></i>
+                    <h3>Open Source</h3>
+                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <div class="container">
+          <h2>Stop waiting.<br></br>Start building.</h2>
+          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </section>
+
+    -->
+
+    <footer>
+      <div class="container">
+        <p>&copy; ReportCity 2019. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+              <a href="#">Pol&iacute;ticade Privacidad</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">T&eacute;rminos de uso</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/new-age.min.js"></script>
+
+        </h:body>
+
+    </f:view>
+</html>
